@@ -1,6 +1,8 @@
 {
   "projects": {
-    "default": "creative-stiching-boutique"
-  }
+    "default": "creative-stiching-boutique",
+    "staging": "creative-stiching-boutique"
+  },
+  "targets": {},
+  "etags": {}
 }
-

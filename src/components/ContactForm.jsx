@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { FaUser, FaPhone, FaEnvelope, FaCut, FaPaperPlane, FaCheckCircle } from 'react-icons/fa';
-import emailjs from '@emailjs/browser';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { db } from "../firebase";
@@ -15,7 +14,6 @@ const ContactForm = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const serviceTypes = [
     'Custom Stitching',
@@ -40,6 +38,7 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
+      // Save to Firestore to trigger email notification via Cloud Function
       await addDoc(collection(db, "contacts"), {
         name: formData.name,
         email: formData.email,
@@ -48,21 +47,6 @@ const ContactForm = () => {
         phone: formData.phone,
         createdAt: Timestamp.now()
       });
-
-      // Send email using emailjs
-      await emailjs.send(
-        'service_id', // Replace with your EmailJS service ID
-        'template_id', // Replace with your EmailJS template ID
-        {
-          to_email: 'jiwanjyoti712@gmail.com',
-          from_name: formData.name,
-          from_email: formData.email,
-          phone: formData.phone,
-          service_type: formData.serviceType,
-          message: formData.message,
-        },
-        'user_id' // Replace with your EmailJS user ID
-      );
 
       toast.success("Message Sent Successfully!");
       setFormData({
@@ -73,31 +57,14 @@ const ContactForm = () => {
         message: ''
       });
     } catch (error) {
-      console.error("Error adding document: ", error);
+      console.error("Error sending message: ", error);
       toast.error("Failed to send message.");
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  if (isSubmitted) {
-    return (
-      <div className="bg-white rounded-2xl shadow-xl p-8 text-center">
-        <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-          <FaCheckCircle className="text-green-600 text-2xl" />
-        </div>
-        <h3 className="text-2xl font-heading font-bold text-secondary-800 mb-2">
-          Thank You!
-        </h3>
-        <p className="text-secondary-600 mb-4">
-          Your inquiry has been submitted successfully. I'll get back to you soon!
-        </p>
-        <p className="text-sm text-secondary-500">
-          You can also reach me directly on WhatsApp for immediate assistance.
-        </p>
-      </div>
-    );
-  }
+
 
   return (
     <>
