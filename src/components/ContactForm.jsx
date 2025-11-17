@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { FaUser, FaPhone, FaEnvelope, FaCut, FaPaperPlane, FaCheckCircle } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { db } from "../firebase";
+import { collection, addDoc, Timestamp } from "firebase/firestore";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -31,34 +35,36 @@ const ContactForm = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const submitForm = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    try {
+      await addDoc(collection(db, "contacts"), {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+        "service-type": formData.serviceType,
+        phone: formData.phone,
+        createdAt: Timestamp.now()
+      });
 
-    // In a real application, you would send the data to your backend
-    console.log('Form submitted:', formData);
+      // Send email using emailjs
+      await emailjs.send(
+        'service_id', // Replace with your EmailJS service ID
+        'template_id', // Replace with your EmailJS template ID
+        {
+          to_email: 'jiwanjyoti712@gmail.com',
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
+          service_type: formData.serviceType,
+          message: formData.message,
+        },
+        'user_id' // Replace with your EmailJS user ID
+      );
 
-    // Send WhatsApp message with form data
-    const phoneNumber = '+918219136254'; // Replace with actual phone number
-    const message = `New inquiry from website:
-Name: ${formData.name}
-Phone: ${formData.phone}
-Email: ${formData.email}
-Service: ${formData.serviceType}
-Message: ${formData.message}`;
-    
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
-
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
+      toast.success("Message Sent Successfully!");
       setFormData({
         name: '',
         phone: '',
@@ -66,7 +72,12 @@ Message: ${formData.message}`;
         serviceType: '',
         message: ''
       });
-    }, 3000);
+    } catch (error) {
+      console.error("Error adding document: ", error);
+      toast.error("Failed to send message.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
@@ -89,17 +100,19 @@ Message: ${formData.message}`;
   }
 
   return (
-    <div className="bg-white rounded-2xl shadow-xl p-8">
-      <div className="text-center mb-8">
-        <h3 className="text-2xl md:text-3xl font-heading font-bold text-secondary-800 mb-2">
-          Get In Touch
-        </h3>
-        <p className="text-secondary-600">
-          Fill out the form below and I'll get back to you within 24 hours.
-        </p>
-      </div>
+    <>
+      <ToastContainer />
+      <div className="bg-white rounded-2xl shadow-xl p-8">
+        <div className="text-center mb-8">
+          <h3 className="text-2xl md:text-3xl font-heading font-bold text-secondary-800 mb-2">
+            Get In Touch
+          </h3>
+          <p className="text-secondary-600">
+            Fill out the form below and I'll get back to you within 24 hours.
+          </p>
+        </div>
 
-      <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={submitForm} className="space-y-6">
         {/* Name Field */}
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-secondary-700 mb-2">
@@ -233,11 +246,12 @@ Message: ${formData.message}`;
 
         {/* Privacy Note */}
         <p className="text-xs text-secondary-500 text-center">
-          By submitting this form, you agree to my privacy policy. 
+          By submitting this form, you agree to my privacy policy.
           I'll only use your information to respond to your inquiry.
         </p>
       </form>
     </div>
+    </>
   );
 };
 
