@@ -1,5 +1,1 @@
-- [ ] Remove unused import 'FaCheckCircle' from src/components/ContactForm.jsx
-- [ ] Change invalid <a href="#"> links to <button> in src/components/Footer.jsx for Privacy Policy and Terms of Service
-- [ ] Remove unused import 'FaThLarge' from src/components/Portfolio.jsx
-- [ ] Remove unused 'getAnalytics' import and 'analytics' assignment from src/firebase.js
-- [ ] Remove unused 'analytics' import from src/index.js
+- [x] Add right margin (mr-4) to the desktop "Book Appointment" button in src/components/Navbar.jsx

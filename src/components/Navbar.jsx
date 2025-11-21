@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaBars, FaTimes, FaPhone } from 'react-icons/fa';
+import logo from '../assets/csblogo.png';
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +27,10 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
+  const handleBookAppointment = () => {
+    navigate('/contact');
+  };
+
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
@@ -31,42 +38,46 @@ const Navbar = () => {
     { name: 'Contact', path: '/contact' },
   ];
 
-  const handleBookAppointment = () => {
-    const phoneNumber = '+918219136254'; // Replace with actual phone number
-    const message = 'Hi! I would like to book an appointment at Creative Stitching Boutique.';
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
-  };
+
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white shadow-lg py-2' : 'bg-white/95 backdrop-blur-sm py-4'
+      isScrolled ? 'shadow-lg py-2' : 'backdrop-blur-sm py-4'
     }`}>
       <div className="container-custom">
-        <div className="flex justify-between items-center">
+        {/* Mobile: Logo on left, Menu button on right */}
+        <div className="md:hidden flex justify-between items-center">
+          <Link to="/" className="flex items-center justify-start ml-4" onClick={closeMenu}>
+            <img src={logo} alt="Creative Stitching Boutique Logo" className="w-24 h-12 rounded-lg" />
+          </Link>
+          <div className="flex-1"></div> {/* Spacer */}
+          <div className="flex justify-end mr-4">
+            <button
+              onClick={toggleMenu}
+              className="text-boutique-textdark hover:text-boutique-primary transition-colors duration-300"
+            >
+              {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+            </button>
+          </div>
+        </div>
+
+        {/* Desktop: Logo on left, Nav center, Button on right */}
+        <div className="hidden md:flex justify-between items-center">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2" onClick={closeMenu}>
-            <div className="w-10 h-10 bg-gradient-to-br from-primary-600 to-accent-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl font-heading">CS</span>
-            </div>
-            <div>
-              <h1 className="text-xl font-heading font-bold text-secondary-700">
-                Creative Stitching
-              </h1>
-              <p className="text-xs text-secondary-500 -mt-1">Boutique</p>
-            </div>
+          <Link to="/" className="flex items-center space-x-2 ml-4" onClick={closeMenu}>
+            <img src={logo} alt="Creative Stitching Boutique Logo" className="w-24 h-12 rounded-lg ml-8" />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
-                className={`font-medium transition-colors duration-300 hover:text-primary-600 ${
+                className={`font-medium transition-colors duration-300 hover:text-boutique-primary ${
                   location.pathname === link.path
-                    ? 'text-primary-600 border-b-2 border-primary-600 pb-1'
-                    : 'text-secondary-700'
+                    ? 'text-boutique-primary border-b-2 border-boutique-primary pb-1'
+                    : 'text-boutique-textdark'
                 }`}
               >
                 {link.name}
@@ -75,22 +86,12 @@ const Navbar = () => {
           </div>
 
           {/* CTA Button - Desktop */}
-          <div className="hidden md:block">
-            <button
-              onClick={handleBookAppointment}
-              className="btn-primary flex items-center space-x-2"
-            >
-              <FaPhone className="text-sm" />
-              <span>Book Appointment</span>
-            </button>
-          </div>
-
-          {/* Mobile Menu Button */}
           <button
-            onClick={toggleMenu}
-            className="md:hidden text-secondary-700 hover:text-primary-600 transition-colors duration-300"
+            onClick={handleBookAppointment}
+            className="bg-boutique-primary hover:bg-boutique-highlight text-white px-4 py-2 rounded-lg font-medium transition-colors duration-300 flex items-center space-x-2 mr-4"
           >
-            {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+            <FaPhone className="text-sm" />
+            <span>Book Appointment</span>
           </button>
         </div>
 
@@ -98,16 +99,16 @@ const Navbar = () => {
         <div className={`md:hidden transition-all duration-300 overflow-hidden ${
           isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}>
-          <div className="py-4 space-y-4">
+          <div className="py-4 space-y-4 px-4">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
                 onClick={closeMenu}
-                className={`block py-2 font-medium transition-colors duration-300 hover:text-primary-600 ${
+                className={`block py-2 font-medium transition-colors duration-300 hover:text-boutique-primary ${
                   location.pathname === link.path
-                    ? 'text-primary-600 border-l-4 border-primary-600 pl-4'
-                    : 'text-secondary-700'
+                    ? 'text-boutique-primary border-l-4 border-boutique-primary pl-4'
+                    : 'text-boutique-textdark'
                 }`}
               >
                 {link.name}
@@ -118,7 +119,7 @@ const Navbar = () => {
                 handleBookAppointment();
                 closeMenu();
               }}
-              className="btn-primary w-full flex items-center justify-center space-x-2 mt-4"
+              className="bg-boutique-primary hover:bg-boutique-highlight text-white w-full flex items-center justify-center mr-8 space-x-2 mt-4 px-4 py-2 rounded-lg font-medium transition-colors duration-300"
             >
               <FaPhone className="text-sm" />
               <span>Book Appointment</span>
