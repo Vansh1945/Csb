@@ -1,6 +1,5 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -20,13 +19,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 export const db = getFirestore(app);
 export const auth = getAuth(app);
 
-// Connect to Firestore emulator if in development
-if (process.env.NODE_ENV === 'development') {
-  import('firebase/firestore').then(({ connectFirestoreEmulator }) => {
-    connectFirestoreEmulator(db, '127.0.0.1', 8080);
-  });
-}
+

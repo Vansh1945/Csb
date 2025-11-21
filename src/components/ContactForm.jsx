@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaUser, FaPhone, FaEnvelope, FaCut, FaPaperPlane, FaCheckCircle } from 'react-icons/fa';
+import { FaUser, FaPhone, FaEnvelope, FaCut, FaPaperPlane } from 'react-icons/fa';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { db } from "../firebase";

@@ -138,12 +138,12 @@ const Footer = () => {
               © {currentYear} Jiwan Jyoti Traditional Dresses. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors duration-300">
+              <button className="text-gray-400 hover:text-primary-400 transition-colors duration-300 bg-transparent border-none cursor-pointer">
                 Privacy Policy
-              </a>
-              <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors duration-300">
+              </button>
+              <button className="text-gray-400 hover:text-primary-400 transition-colors duration-300 bg-transparent border-none cursor-pointer">
                 Terms of Service
-              </a>
+              </button>
             </div>
           </div>
         </div>

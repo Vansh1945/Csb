@@ -1,8 +1,5 @@
-# TODO: Implement Email Notifications via Nodemailer Cloud Function
-
-- [x] Remove EmailJS import and send logic from ContactForm.jsx
-- [x] Keep Firestore save to trigger Cloud Function email notification
-- [x] Update Cloud Function to send emails to jiwanjyoti712@gmail.com
-- [ ] Upgrade Firebase project to Blaze plan for Cloud Functions deployment
-- [ ] Deploy Cloud Functions
-- [ ] Test form submission to verify email is sent via Cloud Function
+- [ ] Remove unused import 'FaCheckCircle' from src/components/ContactForm.jsx
+- [ ] Change invalid <a href="#"> links to <button> in src/components/Footer.jsx for Privacy Policy and Terms of Service
+- [ ] Remove unused import 'FaThLarge' from src/components/Portfolio.jsx
+- [ ] Remove unused 'getAnalytics' import and 'analytics' assignment from src/firebase.js
+- [ ] Remove unused 'analytics' import from src/index.js

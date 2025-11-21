@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaEye, FaTimes, FaThLarge } from 'react-icons/fa';
+import { FaEye, FaTimes } from 'react-icons/fa';
 import { portfolioItems, portfolioCategories } from '../data/portfolio';
 
 const Portfolio = () => {
