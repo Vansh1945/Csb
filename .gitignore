@@ -70,3 +70,6 @@ node_modules/
 
 # Src file for Firebase configuration
 src/firebase.js
+
+.users.json
+
