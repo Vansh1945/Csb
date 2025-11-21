@@ -19,15 +19,15 @@ const Portfolio = () => {
   };
 
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding bg-white font-heading relative">
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-secondary-800 mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-boutique-textdark mb-4">
             Our <span className="text-gradient">Portfolio</span>
           </h2>
-          <p className="text-lg text-secondary-600 max-w-2xl mx-auto mb-8">
-            Explore our collection of beautifully crafted garments that showcase 
+          <p className="text-lg text-boutique-textdark/70 max-w-2xl mx-auto mb-8">
+            Explore our collection of beautifully crafted garments that showcase
             our expertise and attention to detail.
           </p>
 
@@ -39,8 +39,8 @@ const Portfolio = () => {
                 onClick={() => setActiveCategory(category.id)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                   activeCategory === category.id
-                    ? 'bg-primary-600 text-white shadow-lg'
-                    : 'bg-gray-100 text-secondary-600 hover:bg-primary-50 hover:text-primary-600'
+                    ? 'bg-boutique-primary text-white shadow-lg'
+                    : 'bg-boutique-accent text-boutique-textdark hover:bg-boutique-secondary hover:text-boutique-primary'
                 }`}
               >
                 {category.name} ({category.count})
@@ -50,7 +50,7 @@ const Portfolio = () => {
         </div>
 
         {/* Portfolio Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
           {filteredItems.map((item, index) => (
             <div
               key={item.id}
@@ -70,7 +70,7 @@ const Portfolio = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
                   <h3 className="font-heading font-semibold mb-1">{item.title}</h3>
-                  <p className="text-sm text-gray-200 mb-2">{item.category}</p>
+                  <p className="text-sm text-gray-200 mb-2">{item.category.charAt(0).toUpperCase() + item.category.slice(1)}</p>
                   <button
                     onClick={() => openModal(item)}
                     className="flex items-center space-x-2 text-sm bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full hover:bg-white/30 transition-colors duration-300"
@@ -86,10 +86,10 @@ const Portfolio = () => {
 
         {/* CTA Section */}
         <div className="text-center mt-16">
-          <h3 className="text-2xl font-heading font-bold text-secondary-800 mb-4">
+          <h3 className="text-2xl font-heading font-bold text-boutique-textdark mb-4">
             Ready to Create Your Dream Outfit?
           </h3>
-          <p className="text-secondary-600 mb-6 max-w-2xl mx-auto">
+          <p className="text-boutique-textdark/70 mb-6 max-w-2xl mx-auto">
             Let us bring your vision to life with our expert craftsmanship and attention to detail.
           </p>
           <button
@@ -99,7 +99,7 @@ const Portfolio = () => {
               const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
               window.open(whatsappUrl, '_blank');
             }}
-            className="btn-primary"
+            className="bg-boutique-primary hover:bg-boutique-highlight text-white px-8 py-3 rounded-full font-medium transition-colors duration-300 shadow-lg hover:shadow-xl"
           >
             Start Your Project
           </button>
@@ -124,11 +124,11 @@ const Portfolio = () => {
               </button>
             </div>
             <div className="p-6">
-              <h3 className="text-2xl font-heading font-bold text-secondary-800 mb-2">
+              <h3 className="text-2xl font-heading font-bold text-boutique-textdark mb-2">
                 {selectedImage.title}
               </h3>
-              <p className="text-primary-600 font-medium mb-3">{selectedImage.category}</p>
-              <p className="text-secondary-600 leading-relaxed">
+              <p className="text-boutique-highlight font-medium mb-3">{selectedImage.category.charAt(0).toUpperCase() + selectedImage.category.slice(1)}</p>
+              <p className="text-boutique-textdark/80 leading-relaxed">
                 {selectedImage.description}
               </p>
             </div>

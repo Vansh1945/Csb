@@ -5,6 +5,7 @@ module.exports = {
   ],
   theme: {
     extend: {
+     
       colors: {
         boutique: {
           primary: "#6C4A4A",      // Warm Brown Rose – premium look

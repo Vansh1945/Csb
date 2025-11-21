@@ -41,7 +41,7 @@ const Navbar = () => {
 
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${
+    <nav className={`fixed w-full z-50 bg-white transition-all duration-300 ${
       isScrolled ? 'shadow-lg py-2' : 'backdrop-blur-sm py-4'
     }`}>
       <div className="container-custom">

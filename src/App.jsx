@@ -15,7 +15,6 @@ import AdminRoute from './AdminRoute';
 function App() {
   return (
     <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-      <div className="App min-h-screen bg-background">
         <Navbar />
         <main>
           <Routes>
@@ -29,7 +28,6 @@ function App() {
         </main>
         <Footer />
         <WhatsAppButton />
-      </div>
     </Router>
   );
 }
