@@ -122,8 +122,8 @@ const Footer = () => {
               <div className="flex items-start space-x-4">
                 <FaClock className="text-boutique-highlight mt-1 flex-shrink-0" size={18} />
                 <div className="text-boutique-textdark/80 text-base leading-relaxed">
-                  <p>Mon - Sat: 10:00 AM - 8:00 PM</p>
-                  <p>Sunday: 11:00 AM - 6:00 PM</p>
+                  <p>Mon - Sat: 9:00 AM - 8:00 PM</p>
+                  <p>Sunday: 10:00 AM - 6:00 PM</p>
                 </div>
               </div>
             </div>
