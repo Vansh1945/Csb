@@ -7,6 +7,7 @@ export const services = [
     features: ["Perfect Fit Guarantee", "Premium Fabrics", "Personal Consultation", "Multiple Fittings"],
     price: "Starting ₹2,500",
     category: "stitching",
+    rating: 4.9,
     image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
   },
   {
@@ -17,6 +18,7 @@ export const services = [
     features: ["Traditional Patterns", "Cultural Authenticity", "Hand-finished Details", "Custom Colors"],
     price: "Starting ₹4,500",
     category: "himachali",
+    rating: 4.8,
     image: "https://images.unsplash.com/photo-1583391733956-6c78276477e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
   },
   {
@@ -27,6 +29,7 @@ export const services = [
     features: ["Phulkari Embroidery", "Patiala Style", "Traditional Colors", "Cultural Motifs"],
     price: "Starting ₹3,200",
     category: "punjabi",
+    rating: 4.9,
     image: "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
   },
   {
@@ -37,6 +40,7 @@ export const services = [
     features: ["Palazzo Pants", "Traditional Motifs", "Modern Cuts", "Comfortable Fit"],
     price: "Starting ₹2,800",
     category: "designer",
+    rating: 4.7,
     image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
   },
   {
@@ -47,6 +51,7 @@ export const services = [
     features: ["Heavy Work", "Cultural Designs", "Bridal Blouses", "Matching Accessories"],
     price: "Starting ₹25,000",
     category: "bridal",
+    rating: 5.0,
     image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
   },
   {
@@ -57,6 +62,7 @@ export const services = [
     features: ["Perfect Fitting", "Quick Service", "Style Updates", "Size Adjustments"],
     price: "Starting ₹300",
     category: "alterations",
+    rating: 4.6,
     image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
   }
 ];
@@ -67,6 +73,6 @@ export const serviceCategories = [
   { id: 'himachali', name: 'Himachali Dresses', count: services.filter(s => s.category === 'himachali').length },
   { id: 'punjabi', name: 'Punjabi Suits', count: services.filter(s => s.category === 'punjabi').length },
   { id: 'designer', name: 'Designer Wear', count: services.filter(s => s.category === 'designer').length },
-  { id: 'bridal', name: 'Bridal Wear', count: services.filter(s => s.category === 'bridal').length },
+  { id: 'bridal', name: 'Bridal Wear', count: services.filter(s => s.category === 'bridbridal').length },
   { id: 'alterations', name: 'Alterations', count: services.filter(s => s.category === 'alterations').length }
 ];

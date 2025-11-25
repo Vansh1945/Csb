@@ -11,24 +11,34 @@ import Contact from './pages/Contact';
 import AdminLogin from './admin/Login';
 import Dashboard from './admin/Dashboard';
 import AdminRoute from './AdminRoute';
+import PortfolioPage from './pages/Portfolio';
 
 function App() {
   return (
     <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-        <Navbar />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/admin/login" element={<AdminLogin />} />
-            <Route path="/admin/dashboard" element={<AdminRoute><Dashboard /></AdminRoute>} />
-          </Routes>
-        </main>
-        <Footer />
-        <WhatsAppButton />
-    </Router>
+      <Navbar />
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/portfolio" element={<PortfolioPage />} />
+
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/admin/login" element={<AdminLogin />} />
+
+          <Route path="/admin/*" element={
+            <AdminRoute allowedRoles={['admin']}>
+              <Routes>
+                <Route path="dashboard" element={<Dashboard />} />
+              </Routes>
+            </AdminRoute>
+          } />
+        </Routes>
+      </main>
+      <Footer />
+      <WhatsAppButton />
+    </Router >
   );
 }
 

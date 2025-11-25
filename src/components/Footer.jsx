@@ -7,14 +7,14 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const handleWhatsAppClick = () => {
-    const phoneNumber = '+918580458907'; // Replace with actual phone number
+    const phoneNumber = '+918580458907';
     const message = 'Hi! I have a question about your services.';
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
   return (
-    <footer className="bg-white text-boutique-textdark shadow-lg">
+    <footer className="bg-boutique-light-bg text-boutique-textdark shadow-lg">
       <div className="container-custom pt-16 pb-8 px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
@@ -35,7 +35,7 @@ const Footer = () => {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-boutique-textdark/60 hover:text-boutique-highlight transition-colors duration-300 transform hover:scale-110"
+                className="text-boutique-textdark/60 hover:text-boutique-primary transition-colors duration-300 transform hover:scale-110"
               >
                 <FaFacebook size={20} />
               </a>
@@ -43,13 +43,13 @@ const Footer = () => {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-boutique-textdark/60 hover:text-boutique-highlight transition-colors duration-300 transform hover:scale-110"
+                className="text-boutique-textdark/60 hover:text-boutique-primary transition-colors duration-300 transform hover:scale-110"
               >
                 <FaInstagram size={20} />
               </a>
               <button
                 onClick={handleWhatsAppClick}
-                className="text-boutique-textdark/60 hover:text-green-500 transition-colors duration-300 transform hover:scale-110"
+                className="text-boutique-textdark/60 hover:text-green-600 transition-colors duration-300 transform hover:scale-110"
               >
                 <FaWhatsapp size={20} />
               </button>
@@ -58,25 +58,25 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="space-y-6">
-            <h4 className="text-xl font-heading font-semibold text-boutique-primary border-b border-boutique-primary/20 pb-2">Quick Links</h4>
+            <h4 className="text-xl font-heading font-semibold text-boutique-primary border-b border-boutique-accent/30 pb-2">Quick Links</h4>
             <ul className="space-y-3">
               <li>
-                <Link to="/" className="text-boutique-textdark/80 hover:text-boutique-highlight transition-colors duration-300 text-base font-medium transform hover:translate-x-2 inline-block">
+                <Link to="/" className="text-boutique-textdark/80 hover:text-boutique-primary transition-colors duration-300 text-base font-medium transform hover:translate-x-2 inline-block">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-boutique-textdark/80 hover:text-boutique-highlight transition-colors duration-300 text-base font-medium transform hover:translate-x-2 inline-block">
+                <Link to="/about" className="text-boutique-textdark/80 hover:text-boutique-primary transition-colors duration-300 text-base font-medium transform hover:translate-x-2 inline-block">
                   About Me
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-boutique-textdark/80 hover:text-boutique-highlight transition-colors duration-300 text-base font-medium transform hover:translate-x-2 inline-block">
+                <Link to="/services" className="text-boutique-textdark/80 hover:text-boutique-primary transition-colors duration-300 text-base font-medium transform hover:translate-x-2 inline-block">
                   My Services
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-boutique-textdark/80 hover:text-boutique-highlight transition-colors duration-300 text-base font-medium transform hover:translate-x-2 inline-block">
+                <Link to="/contact" className="text-boutique-textdark/80 hover:text-boutique-primary transition-colors duration-300 text-base font-medium transform hover:translate-x-2 inline-block">
                   Contact Me
                 </Link>
               </li>
@@ -87,40 +87,40 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="text-lg font-heading font-semibold text-boutique-primary">My Services</h4>
             <ul className="space-y-2 text-sm text-boutique-textdark/80">
-              <li className="hover:text-boutique-highlight transition-colors duration-300">Custom Stitching</li>
-              <li className="hover:text-boutique-highlight transition-colors duration-300">Himachali Traditional Dresses</li>
-              <li className="hover:text-boutique-highlight transition-colors duration-300">Punjabi Phulkari Suits</li>
-              <li className="hover:text-boutique-highlight transition-colors duration-300">Designer Plazo Suits</li>
-              <li className="hover:text-boutique-highlight transition-colors duration-300">Bridal Lehengas</li>
-              <li className="hover:text-boutique-highlight transition-colors duration-300">Alterations & Fitting</li>
+              <li className="hover:text-boutique-primary transition-colors duration-300">Custom Stitching</li>
+              <li className="hover:text-boutique-primary transition-colors duration-300">Himachali Traditional Dresses</li>
+              <li className="hover:text-boutique-primary transition-colors duration-300">Punjabi Phulkari Suits</li>
+              <li className="hover:text-boutique-primary transition-colors duration-300">Designer Plazo Suits</li>
+              <li className="hover:text-boutique-primary transition-colors duration-300">Bridal Lehengas</li>
+              <li className="hover:text-boutique-primary transition-colors duration-300">Alterations & Fitting</li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div className="space-y-6">
-            <h4 className="text-xl font-heading font-semibold text-boutique-primary border-b border-boutique-primary/20 pb-2">Contact Info</h4>
+            <h4 className="text-xl font-heading font-semibold text-boutique-primary border-b border-boutique-accent/30 pb-2">Contact Info</h4>
             <div className="space-y-4">
               <div className="flex items-start space-x-4">
-                <FaMapMarkerAlt className="text-boutique-highlight mt-1 flex-shrink-0" size={18} />
+                <FaMapMarkerAlt className="text-boutique-primary mt-1 flex-shrink-0" size={18} />
                 <p className="text-boutique-textdark/80 text-base leading-relaxed">
                   351 Urban Phase 1,<br />
                   Jalandhar, Punjab 144005
                 </p>
               </div>
               <div className="flex items-center space-x-4">
-                <FaPhone className="text-boutique-highlight flex-shrink-0" size={18} />
-                <a href="tel:+918580458907" className="text-boutique-textdark/80 hover:text-boutique-highlight transition-colors duration-300 text-base font-medium">
+                <FaPhone className="text-boutique-primary flex-shrink-0" size={18} />
+                <a href="tel:+918580458907" className="text-boutique-textdark/80 hover:text-boutique-primary transition-colors duration-300 text-base font-medium">
                   +91 8580458907
                 </a>
               </div>
               <div className="flex items-center space-x-4">
-                <FaEnvelope className="text-boutique-highlight flex-shrink-0" size={18} />
-                <a href="mailto:jiwanjyoti.dresses@gmail.com" className="text-boutique-textdark/80 hover:text-boutique-highlight transition-colors duration-300 text-base font-medium">
+                <FaEnvelope className="text-boutique-primary flex-shrink-0" size={18} />
+                <a href="mailto:jiwanjyoti712@gmail.com" className="text-boutique-textdark/80 hover:text-boutique-primary transition-colors duration-300 text-base font-medium">
                   jiwanjyoti712@gmail.com
                 </a>
               </div>
               <div className="flex items-start space-x-4">
-                <FaClock className="text-boutique-highlight mt-1 flex-shrink-0" size={18} />
+                <FaClock className="text-boutique-primary mt-1 flex-shrink-0" size={18} />
                 <div className="text-boutique-textdark/80 text-base leading-relaxed">
                   <p>Mon - Sat: 9:00 AM - 8:00 PM</p>
                   <p>Sunday: 10:00 AM - 6:00 PM</p>
@@ -131,24 +131,22 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-boutique-primary/20 mt-4 pt-4 bg-white">
+        <div className="border-t border-boutique-accent/30 mt-4 pt-4 bg-transparent">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
             <p className="text-boutique-textdark/70 text-base font-medium">
-              © {currentYear} Jiwan Jyoti Traditional Dresses. All rights reserved.
+              © {currentYear} Creative Stitching Boutique. All rights reserved.
             </p>
             <div className="flex space-x-8 text-base">
-              <button className="text-boutique-textdark/70 hover:text-boutique-highlight transition-colors duration-300 bg-transparent border-none cursor-pointer font-medium">
+              <button className="text-boutique-textdark/70 hover:text-boutique-primary transition-colors duration-300 bg-transparent border-none cursor-pointer font-medium">
                 Privacy Policy
               </button>
-              <button className="text-boutique-textdark/70 hover:text-boutique-highlight transition-colors duration-300 bg-transparent border-none cursor-pointer font-medium">
+              <button className="text-boutique-textdark/70 hover:text-boutique-primary transition-colors duration-300 bg-transparent border-none cursor-pointer font-medium">
                 Terms of Service
               </button>
             </div>
           </div>
         </div>
-
       </div>
-
     </footer>
   );
 };

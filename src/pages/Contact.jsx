@@ -19,85 +19,119 @@ const Contact = () => {
   const faqData = [
     {
       question: 'How long does custom stitching take?',
-      answer: 'Custom stitching typically takes 1-3 weeks depending on the complexity of the garment. Bridal wear may take 4-6 weeks due to intricate detailing.'
+      answer: 'Custom stitching typically takes 1-3 weeks depending on the complexity of the garment. Bridal wear may take 4-6 weeks due to intricate detailing and multiple fittings.'
     },
     {
       question: 'Do you provide home visits for measurements?',
-      answer: 'Yes, we offer home visit services for measurements within Mumbai city limits. Additional charges may apply based on location.'
+      answer: 'Yes, we offer complimentary home visit services for measurements within Jalandhar city limits. For areas outside the city, nominal charges may apply based on distance.'
     },
     {
       question: 'What is your alteration policy?',
-      answer: 'We provide free minor alterations within 7 days of delivery. Major alterations are charged separately based on the work required.'
+      answer: 'We provide free minor alterations within 7 days of delivery. Major alterations are charged separately based on the work required. We ensure perfect fit and customer satisfaction.'
     },
     {
       question: 'Do you work with customer\'s own fabric?',
-      answer: 'Absolutely! We welcome customers who bring their own fabrics. We\'ll provide guidance on fabric requirements and care instructions.'
+      answer: 'Absolutely! We welcome customers who bring their own fabrics. We provide expert guidance on fabric requirements, pattern selection, and care instructions to ensure the best results.'
+    },
+    {
+      question: 'What payment methods do you accept?',
+      answer: 'We accept cash, UPI payments, credit/debit cards, and bank transfers. For custom orders, we require a 50% advance with the balance due upon completion.'
+    },
+    {
+      question: 'Do you offer emergency stitching services?',
+      answer: 'Yes, we provide emergency stitching services for urgent occasions with express turnaround times. Additional charges may apply for expedited services.'
     }
   ];
 
   const contactInfo = [
     {
-      icon: <FaPhone className="text-2xl text-boutique-primary" />,
+      icon: <FaPhone className="text-2xl" />,
       title: 'Phone',
       details: ['+91 8580458907'],
+      subtitle: 'Call us directly',
       action: () => window.open('tel:+918580458907')
     },
     {
-      icon: <FaEnvelope className="text-2xl text-boutique-primary" />,
+      icon: <FaEnvelope className="text-2xl" />,
       title: 'Email',
       details: ['jiwanjyoti712@gmail.com'],
+      subtitle: 'Send us an email',
       action: () => window.open('mailto:jiwanjyoti712@gmail.com')
     },
     {
-      icon: <FaMapMarkerAlt className="text-2xl text-boutique-primary" />,
+      icon: <FaMapMarkerAlt className="text-2xl" />,
       title: 'Address',
-      details: ['Urban Phase 1, Jalandhar, Punjab'],
-      action: () => window.open('https://maps.google.com')
+      details: ['Urban Phase 1', 'Jalandhar, Punjab'],
+      subtitle: 'Visit our boutique',
+      action: () => window.open('https://maps.google.com/maps?q=Urban+Phase+1+Jalandhar+Punjab')
     },
     {
-      icon: <FaClock className="text-2xl text-boutique-primary" />,
-      title: 'Hours',
-      details: ['Mon-Sat: 10AM-8PM'],
+      icon: <FaClock className="text-2xl" />,
+      title: 'Working Hours',
+      details: ['Mon - Sat: 10:00 AM - 8:00 PM', 'Sunday: Closed'],
+      subtitle: 'We\'re here for you',
       action: null
     }
   ];
 
   return (
-    <div className="pt-20 min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="py-20 lg:py-28 bg-gradient-to-br from-boutique-secondary via-boutique-accent/20 to-boutique-primary/10 relative overflow-hidden">
-        <div className="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
-        <div className="container-custom text-center px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="animate-fade-in-up">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-boutique-textdark mb-6 leading-tight">
-              Get in <span className="bg-gradient-to-r from-boutique-primary to-boutique-highlight bg-clip-text text-transparent">Touch</span>
+    <div className="min-h-screen pt-20 bg-boutique-light-bg">
+      {/* Header Section */}
+      <section className="py-16 bg-gradient-to-br from-boutique-secondary to-boutique-light-bg">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-4xl mx-auto">
+            <h1 className="text-4xl md:text-5xl font-bold text-boutique-textdark mb-6">
+              Contact <span className="text-boutique-primary">Us</span>
             </h1>
-            <p className="text-xl sm:text-2xl text-boutique-textdark/80 max-w-3xl mx-auto leading-relaxed font-light">
-              Let's create something beautiful together. Reach out for consultations and custom designs.
+            <p className="text-lg text-boutique-textdark/80 max-w-3xl mx-auto">
+              Let's create something beautiful together. Reach out for consultations, custom designs, 
+              and expert tailoring services.
             </p>
+            <div className="flex flex-wrap justify-center gap-4 mt-8">
+              <button
+                onClick={handleWhatsAppClick}
+                className="bg-boutique-primary text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:bg-boutique-highlight text-sm flex items-center gap-2"
+              >
+                <FaWhatsapp className="text-base" />
+                Chat on WhatsApp
+              </button>
+              <button
+                onClick={() => window.open('tel:+918580458907')}
+                className="border border-boutique-primary text-boutique-primary font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:bg-boutique-primary hover:text-white text-sm"
+              >
+                Call Now
+              </button>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Contact Information Cards */}
-      <section className="py-16 lg:py-24 bg-white">
-        <div className="container-custom px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {/* Contact Information Grid */}
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((info, index) => (
               <div
                 key={index}
-                className={`group bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg hover:shadow-2xl text-center transition-all duration-500 p-8 border border-gray-100 hover:border-boutique-primary/20 ${info.action ? 'cursor-pointer hover:scale-105 hover:-translate-y-2' : ''}`}
+                className={`bg-boutique-light-bg rounded-xl p-6 border border-boutique-secondary/10 hover:border-boutique-accent transition-all duration-300 ${
+                  info.action ? 'cursor-pointer hover:shadow-lg' : ''
+                }`}
                 onClick={info.action}
               >
-                <div className="w-20 h-20 bg-gradient-to-br from-boutique-secondary to-boutique-accent/30 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                  {React.cloneElement(info.icon, { className: "text-3xl text-boutique-primary drop-shadow-sm" })}
+                <div className="w-12 h-12 bg-boutique-accent/10 rounded-full flex items-center justify-center mb-4">
+                  <div className="text-boutique-primary">
+                    {info.icon}
+                  </div>
                 </div>
-                <h3 className="text-xl font-heading font-bold text-boutique-textdark mb-4 group-hover:text-boutique-primary transition-colors">
+                <h3 className="text-lg font-bold text-boutique-textdark mb-2">
                   {info.title}
                 </h3>
-                <div className="space-y-2">
+                <p className="text-boutique-textdark/70 text-sm mb-4">
+                  {info.subtitle}
+                </p>
+                <div className="space-y-1">
                   {info.details.map((detail, detailIndex) => (
-                    <p key={detailIndex} className="text-boutique-textdark/70 font-medium">
+                    <p key={detailIndex} className="text-boutique-textdark font-medium text-sm">
                       {detail}
                     </p>
                   ))}
@@ -108,118 +142,110 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Contact Form and Quick Actions */}
-      <section className="py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-white">
-        <div className="container-custom px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+      {/* Contact Form & Details Section */}
+      <section className="py-16 bg-boutique-light-bg">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Contact Form */}
-            <div className="order-2 lg:order-1">
+            <div className="lg:col-span-2">
+              <div className="bg-white rounded-xl p-6 shadow-lg border border-boutique-secondary/10">
+                <h2 className="text-3xl font-bold text-boutique-textdark mb-6 text-center">
+                  Send Us a Message
+                </h2>
                 <ContactForm />
-           
+              </div>
             </div>
 
-            {/* Quick Actions & Map */}
-            <div className="space-y-8 order-1 lg:order-2">
-              {/* Map Section */}
-              <div className="bg-gradient-to-br from-boutique-secondary to-boutique-accent/20 rounded-3xl shadow-xl overflow-hidden border border-boutique-secondary/20">
-                <div className="h-72 flex items-center justify-center p-8">
-                  <div className="text-center">
-                    <FaMapMarkerAlt className="text-5xl text-boutique-primary mx-auto mb-6 drop-shadow-lg animate-pulse" />
-                    <h3 className="text-2xl font-heading font-bold text-boutique-textdark mb-4">
-                      Visit Our Boutique
-                    </h3>
-                    <p className="text-boutique-textdark/70 mb-6 text-lg leading-relaxed">
-                      351 Urban Phase 1<br />
-                      Jalandhar, Punjab 144005
-                    </p>
-                    <button
-                      onClick={() => window.open('https://maps.google.com')}
-                      className="bg-gradient-to-r from-boutique-primary to-boutique-highlight hover:from-boutique-highlight hover:to-boutique-primary text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105"
-                    >
-                      Get Directions
-                    </button>
+            {/* Sidebar with Additional Info */}
+            <div className="space-y-6">
+              {/* Boutique Address */}
+              <div className="bg-white rounded-xl p-6 shadow-lg border border-boutique-secondary/10">
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-boutique-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <FaMapMarkerAlt className="text-xl text-boutique-primary" />
                   </div>
+                  <h3 className="text-lg font-bold text-boutique-textdark mb-3">
+                    Boutique Address
+                  </h3>
+                  <p className="text-boutique-textdark/70 mb-4 text-sm leading-relaxed">
+                    Urban Phase 1<br />
+                    Jalandhar, Punjab 144005<br />
+                    India
+                  </p>
+                  <button
+                    onClick={() => window.open('https://maps.google.com/maps?q=Urban+Phase+1+Jalandhar+Punjab')}
+                    className="w-full bg-boutique-primary text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 hover:bg-boutique-highlight text-sm"
+                  >
+                    Get Directions
+                  </button>
                 </div>
               </div>
 
-              {/* Quick Contact Buttons */}
-              <div className="bg-white rounded-3xl shadow-xl p-8 border border-gray-100">
-                <h3 className="text-2xl font-heading font-bold text-boutique-textdark mb-8 text-center">
+              {/* Quick Contact */}
+              <div className="bg-white rounded-xl p-6 shadow-lg border border-boutique-secondary/10">
+                <h3 className="text-lg font-bold text-boutique-textdark mb-4 text-center">
                   Quick Contact
                 </h3>
-                <div className="space-y-4">
+                <div className="space-y-3">
                   <button
                     onClick={handleWhatsAppClick}
-                    className="w-full flex items-center space-x-4 p-5 bg-gradient-to-r from-green-50 to-green-100 hover:from-green-100 hover:to-green-200 rounded-xl transition-all duration-300 group hover:shadow-lg hover:scale-102"
+                    className="w-full flex items-center gap-3 p-4 bg-green-50 border border-green-200 rounded-lg hover:bg-green-100 transition-all duration-300"
                   >
-                    <div className="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
-                      <FaWhatsapp className="text-white text-xl" />
+                    <div className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center">
+                      <FaWhatsapp className="text-white text-lg" />
                     </div>
                     <div className="text-left">
-                      <h4 className="font-bold text-boutique-textdark">WhatsApp</h4>
-                      <p className="text-sm text-boutique-textdark/70">Instant chat</p>
+                      <h4 className="font-bold text-boutique-textdark text-sm">WhatsApp</h4>
+                      <p className="text-xs text-boutique-textdark/70">Quick response</p>
                     </div>
                   </button>
 
                   <button
                     onClick={() => window.open('tel:+918580458907')}
-                    className="w-full flex items-center space-x-4 p-5 bg-gradient-to-r from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-200 rounded-xl transition-all duration-300 group hover:shadow-lg hover:scale-102"
+                    className="w-full flex items-center gap-3 p-4 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-all duration-300"
                   >
-                    <div className="w-14 h-14 bg-blue-500 rounded-full flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
-                      <FaPhone className="text-white text-xl" />
+                    <div className="w-10 h-10 bg-boutique-primary rounded-full flex items-center justify-center">
+                      <FaPhone className="text-white text-lg" />
                     </div>
                     <div className="text-left">
-                      <h4 className="font-bold text-boutique-textdark">Call Us</h4>
-                      <p className="text-sm text-boutique-textdark/70">+91 8580458907</p>
-                    </div>
-                  </button>
-
-                  <button
-                    onClick={() => window.open('mailto:jiwanjyoti712@gmail.com')}
-                    className="w-full flex items-center space-x-4 p-5 bg-gradient-to-r from-purple-50 to-purple-100 hover:from-purple-100 hover:to-purple-200 rounded-xl transition-all duration-300 group hover:shadow-lg hover:scale-102"
-                  >
-                    <div className="w-14 h-14 bg-purple-500 rounded-full flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
-                      <FaEnvelope className="text-white text-xl" />
-                    </div>
-                    <div className="text-left">
-                      <h4 className="font-bold text-boutique-textdark">Email Us</h4>
-                      <p className="text-sm text-boutique-textdark/70">jiwanjyoti712@gmail.com</p>
+                      <h4 className="font-bold text-boutique-textdark text-sm">Call Now</h4>
+                      <p className="text-xs text-boutique-textdark/70">Direct call</p>
                     </div>
                   </button>
                 </div>
               </div>
 
-              {/* Social Media */}
-              <div className="bg-white rounded-3xl shadow-xl p-8 border border-gray-100">
-                <h3 className="text-2xl font-heading font-bold text-boutique-textdark mb-6 text-center">
+              {/* Social Media Links */}
+              <div className="bg-white rounded-xl p-6 shadow-lg border border-boutique-secondary/10">
+                <h3 className="text-lg font-bold text-boutique-textdark mb-4 text-center">
                   Follow Us
                 </h3>
-                <div className="flex justify-center space-x-6">
+                <div className="flex justify-center gap-4 mb-4">
                   <a
                     href="https://facebook.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-16 h-16 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-xl hover:-translate-y-1"
+                    className="w-12 h-12 bg-boutique-primary rounded-full flex items-center justify-center hover:bg-boutique-highlight transition-all duration-300"
                   >
-                    <FaFacebook className="text-white text-2xl" />
+                    <FaFacebook className="text-white text-lg" />
                   </a>
                   <a
                     href="https://instagram.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-xl hover:-translate-y-1"
+                    className="w-12 h-12 bg-gradient-to-r from-boutique-primary to-boutique-accent rounded-full flex items-center justify-center hover:opacity-90 transition-all duration-300"
                   >
-                    <FaInstagram className="text-white text-2xl" />
+                    <FaInstagram className="text-white text-lg" />
                   </a>
                   <button
                     onClick={handleWhatsAppClick}
-                    className="w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-xl hover:-translate-y-1"
+                    className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center hover:bg-green-700 transition-all duration-300"
                   >
-                    <FaWhatsapp className="text-white text-2xl" />
+                    <FaWhatsapp className="text-white text-lg" />
                   </button>
                 </div>
-                <p className="text-sm text-boutique-textdark/70 mt-6 text-center">
-                  Stay updated with our latest designs and offers!
+                <p className="text-center text-boutique-textdark/70 text-sm">
+                  See our latest designs and creations
                 </p>
               </div>
             </div>
@@ -228,36 +254,40 @@ const Contact = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 lg:py-24 bg-white">
-        <div className="container-custom px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-boutique-textdark mb-6">
-              Frequently Asked <span className="bg-gradient-to-r from-boutique-primary to-boutique-highlight bg-clip-text text-transparent">Questions</span>
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-boutique-textdark mb-4">
+              Frequently Asked Questions
             </h2>
-            <p className="text-xl text-boutique-textdark/70 max-w-2xl mx-auto font-light">
-              Quick answers to common questions about our services.
+            <p className="text-boutique-textdark/70 max-w-2xl mx-auto text-sm">
+              Find quick answers to common questions about our services and processes.
             </p>
           </div>
 
-          <div className="space-y-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-6xl mx-auto">
             {faqData.map((faq, index) => (
-              <div key={index} className="bg-gradient-to-r from-white to-gray-50 rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300">
+              <div
+                key={index}
+                className="bg-boutique-light-bg rounded-lg border border-boutique-secondary/10 hover:border-boutique-accent transition-all duration-300"
+              >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full text-left p-8 focus:outline-none focus:ring-2 focus:ring-boutique-primary/50 hover:bg-gray-50/50 transition-all duration-300"
+                  className="w-full text-left p-4 focus:outline-none"
                 >
                   <div className="flex items-center justify-between">
-                    <h3 className="text-xl font-heading font-semibold text-boutique-textdark pr-4">
+                    <h3 className="font-semibold text-boutique-textdark pr-4 text-sm">
                       {faq.question}
                     </h3>
-                    <div className={`transform transition-transform duration-300 ${expandedFAQ === index ? 'rotate-180' : ''}`}>
-                      <FaChevronDown className="text-boutique-primary text-xl flex-shrink-0" />
+                    <div className={`flex-shrink-0 transition-transform duration-300 ${expandedFAQ === index ? 'rotate-180' : ''}`}>
+                      <FaChevronDown className="text-boutique-primary text-xs" />
                     </div>
                   </div>
                 </button>
-                <div className={`overflow-hidden transition-all duration-500 ease-in-out ${expandedFAQ === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-                  <div className="px-8 pb-8">
-                    <p className="text-boutique-textdark/70 text-lg leading-relaxed">
+                <div className={`transition-all duration-300 overflow-hidden ${expandedFAQ === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+                  <div className="px-4 pb-4">
+                    <div className="h-px bg-boutique-accent/30 mb-3"></div>
+                    <p className="text-boutique-textdark/70 text-sm">
                       {faq.answer}
                     </p>
                   </div>
@@ -269,23 +299,30 @@ const Contact = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 lg:py-24 bg-gradient-to-r from-boutique-primary via-boutique-highlight to-boutique-primary text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div className="container-custom text-center px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="animate-fade-in-up">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-6">
-              Ready to Start Your Project?
+      <section className="py-16 bg-gradient-to-r from-boutique-primary to-boutique-highlight text-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold mb-4">
+              Ready to Create Your Perfect Outfit?
             </h2>
-            <p className="text-xl sm:text-2xl mb-10 max-w-2xl mx-auto opacity-90 font-light">
-              Contact us today and let's create something beautiful together!
+            <p className="text-lg mb-6 opacity-90">
+              Contact us today for a free consultation and let's bring your fashion vision to life.
             </p>
-            <button
-              onClick={handleWhatsAppClick}
-              className="bg-white text-boutique-primary hover:bg-gray-100 font-bold py-4 px-10 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 flex items-center space-x-3 mx-auto text-lg"
-            >
-              <FaWhatsapp className="text-2xl" />
-              <span>Start Conversation</span>
-            </button>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <button
+                onClick={handleWhatsAppClick}
+                className="bg-white text-boutique-primary font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:bg-boutique-secondary flex items-center justify-center gap-2 text-sm"
+              >
+                <FaWhatsapp />
+                <span>Start on WhatsApp</span>
+              </button>
+              <button
+                onClick={() => window.open('tel:+918580458907')}
+                className="border border-white text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:bg-white hover:text-boutique-primary text-sm"
+              >
+                Call for Consultation
+              </button>
+            </div>
           </div>
         </div>
       </section>

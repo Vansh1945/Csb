@@ -1,12 +1,13 @@
-# Dashboard UI Color Update Plan
+# TODO - Admin Dashboard Enhancements
 
-## Steps to Complete
-- [ ] Update main background from bg-white to bg-boutique-secondary
-- [x] Update navigation bar colors (shadow, borders, text)
-- [x] Update dashboard header colors
-- [ ] Update statistics cards gradients to boutique colors (blue -> primary/accent, green -> accent/highlight, purple -> highlight/primary)
-- [ ] Update messages list table colors (headers, rows, borders)
-- [ ] Update modal colors (background, borders, text)
-- [ ] Update buttons and actions (view/delete buttons, close button)
-- [ ] Update loading/error states colors
-- [ ] Verify all boutique colors are used consistently
+1. Add checkbox column for multi-select of contacts in the contact list table.
+2. Add a bulk delete button to delete all selected contacts.
+3. Add a delete button on each contact row for single deletion.
+4. Implement contact deletion functionality using Firestore deleteDoc.
+5. Add a contacts stats section showing total contacts count.
+6. Display toast notifications for successful or failed deletions.
+7. Ensure contact list UI updates after deletions.
+8. Maintain existing features such as navigation and logout.
+9. Ensure the UI remains responsive and visually consistent.
+
+All changes will be made in src/admin/Dashboard.jsx.
