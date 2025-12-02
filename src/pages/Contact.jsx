@@ -68,7 +68,7 @@ const Contact = () => {
     {
       icon: <FaClock className="text-2xl" />,
       title: 'Working Hours',
-      details: ['Mon - Sat: 10:00 AM - 8:00 PM', 'Sunday: Closed'],
+      details: ['Mon - Sat: 10:00 AM - 8:00 PM', 'Sunday: 10:00 AM - 6:00 PM'],
       subtitle: 'We\'re here for you',
       action: null
     }
@@ -77,7 +77,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen pt-20 bg-boutique-light-bg">
       {/* Header Section */}
-      <section className="py-16 bg-gradient-to-br from-boutique-secondary to-boutique-light-bg">
+      <section className="py-16 bg-gradient-to-br from-boutique-secondary to-boutique-light-bg border-b border-boutique-secondary/10">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold text-boutique-textdark mb-6">
@@ -107,13 +107,13 @@ const Contact = () => {
       </section>
 
       {/* Contact Information Grid */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-white border-b border-boutique-secondary/10">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((info, index) => (
               <div
                 key={index}
-                className={`bg-boutique-light-bg rounded-xl p-6 border border-boutique-secondary/10 hover:border-boutique-accent transition-all duration-300 ${
+                className={`bg-boutique-light-bg rounded-xl p-6 border border-boutique-secondary/10 hover:border-0 transition-all duration-300 ${
                   info.action ? 'cursor-pointer hover:shadow-lg' : ''
                 }`}
                 onClick={info.action}
@@ -148,7 +148,7 @@ const Contact = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Contact Form */}
             <div className="lg:col-span-2">
-              <div className="bg-white rounded-xl p-6 shadow-lg border border-boutique-secondary/10">
+              <div className="bg-white rounded-xl p-6 border border-boutique-secondary/10">
                 <h2 className="text-3xl font-bold text-boutique-textdark mb-6 text-center">
                   Send Us a Message
                 </h2>
@@ -254,7 +254,7 @@ const Contact = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white border-b border-boutique-secondary/10">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-boutique-textdark mb-4">
@@ -299,7 +299,7 @@ const Contact = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-boutique-primary to-boutique-highlight text-white">
+      <section className="py-16 bg-gradient-to-r from-boutique-primary to-boutique-highlight text-white border-b border-boutique-secondary/10">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-2xl mx-auto">
             <h2 className="text-3xl font-bold mb-4">
