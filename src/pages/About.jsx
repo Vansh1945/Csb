@@ -299,7 +299,7 @@ I try to give handcrafted perfection.`
       </section>
 
       {/* Meet the Founder Section */}
-      <section className="py-16 bg-boutique-light-bg">
+      {/* <section className="py-16 bg-boutique-light-bg">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-boutique-textdark mb-4">
@@ -353,7 +353,7 @@ I try to give handcrafted perfection.`
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-boutique-primary to-boutique-highlight text-white">

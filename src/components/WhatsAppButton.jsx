@@ -25,7 +25,7 @@ const WhatsAppButton = () => {
   ];
 
   const handleWhatsAppClick = (customMessage = null) => {
-    const phoneNumber = '+918219136254';
+    const phoneNumber = '+918580458907';
     const defaultMessage = 'Hi! I would like to know more about your dress services.';
     const message = customMessage || defaultMessage;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
