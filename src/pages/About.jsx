@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FaUsers, FaLightbulb, FaRocket, FaBullseye, FaHeart, FaAward, FaStar } from 'react-icons/fa';
 import about from '../assets/about.png';
-import founder from '../assets/ceo.png';
+
 
 // Custom hook for count-up animation
 const useCountUp = (end, duration = 2000, startOnView = true) => {
@@ -53,24 +53,6 @@ const About = () => {
   const experienceCount = useCountUp(15, 1000, isVisible);
   const satisfactionCount = useCountUp(99, 1500, isVisible);
 
-  const teamMembers = [
-    {
-      name: 'Jyoti',
-      role: 'CEO & Founder',
-      image: founder,
-      bio: `Creative Stitching Boutique is very close to my heart.
-With the art, hard work and experience I have learned throughout my life,
-This boutique has been created.
-Every customer is like family to me,
-And I prepare every outfit with the same care and perfection
-Like for yourself.
-
-I believe right fitting and right design
-Gives women a different confidence,
-And it is in this spirit that I create every piece.
-I try to give handcrafted perfection.`
-    }
-  ];
 
   const principles = [
     {
@@ -112,7 +94,7 @@ I try to give handcrafted perfection.`
               About <span className="text-boutique-primary">Creative Stitching</span>
             </h1>
             <p className="text-lg text-boutique-textdark/80 max-w-3xl mx-auto">
-              Where traditional craftsmanship meets modern elegance. We create beautiful, perfectly fitted outfits 
+              Where traditional craftsmanship meets modern elegance. We create beautiful, perfectly fitted outfits
               that celebrate your unique style and personality.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mt-8">
@@ -165,23 +147,23 @@ I try to give handcrafted perfection.`
               </div>
               <div className="absolute -bottom-4 -left-4 w-3/4 h-3/4 bg-boutique-accent/20 rounded-xl -z-10"></div>
             </div>
-            
+
             <div className="space-y-6">
               <h2 className="text-3xl font-bold text-boutique-textdark">
                 Our Boutique Story
               </h2>
               <div className="space-y-4 text-boutique-textdark/80">
                 <p>
-                  Creative Stitching Boutique began in a small room with a single sewing machine and a big dream. 
-                  The vision was simple yet powerful: every woman deserves to wear outfits with perfect fitting, 
+                  Creative Stitching Boutique began in a small room with a single sewing machine and a big dream.
+                  The vision was simple yet powerful: every woman deserves to wear outfits with perfect fitting,
                   beautiful finishing, and premium quality.
                 </p>
                 <p>
-                  Through years of hard work, creativity, and dedication, Creative Stitching Boutique has become 
+                  Through years of hard work, creativity, and dedication, Creative Stitching Boutique has become
                   a name synonymous with love, artistry, and finesse in every design.
                 </p>
                 <p className="font-semibold text-boutique-primary">
-                  Today, Creative Stitching Boutique is more than just a boutique—it's a promise that every woman 
+                  Today, Creative Stitching Boutique is more than just a boutique—it's a promise that every woman
                   deserves to look beautiful, and perfect stitching enhances that beauty.
                 </p>
               </div>
@@ -208,7 +190,7 @@ I try to give handcrafted perfection.`
               <div className="space-y-2">
                 {[
                   "High-quality stitching",
-                  "Custom fitting & measurements", 
+                  "Custom fitting & measurements",
                   "Designer-level finishing",
                   "Comfortable & elegant outfits",
                   "100% customer satisfaction"
@@ -220,7 +202,7 @@ I try to give handcrafted perfection.`
                 ))}
               </div>
             </div>
-            
+
             {/* Vision Statement */}
             <div className="bg-white rounded-xl p-6 shadow-lg border border-boutique-secondary/10">
               <div className="flex items-center space-x-4 mb-4">
@@ -235,7 +217,7 @@ I try to give handcrafted perfection.`
               <div className="space-y-3">
                 {[
                   "Develop the boutique into a premium designer brand",
-                  "Create the perfect blend of traditional and modern fashion", 
+                  "Create the perfect blend of traditional and modern fashion",
                   "Promote local crafts for women empowerment",
                   "Always prioritize quality and trust above everything"
                 ].map((item, index) => (
@@ -261,7 +243,7 @@ I try to give handcrafted perfection.`
               The core values that drive our craftsmanship, shape our culture, and define our relationships with clients.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {principles.map((principle, index) => (
               <div key={index} className="bg-white rounded-lg p-4 shadow-lg border border-boutique-secondary/10">
@@ -298,62 +280,7 @@ I try to give handcrafted perfection.`
         </div>
       </section>
 
-      {/* Meet the Founder Section */}
-      {/* <section className="py-16 bg-boutique-light-bg">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-boutique-textdark mb-4">
-              Meet Our Founder
-            </h2>
-            <p className="text-boutique-textdark/70 max-w-2xl mx-auto">
-              The visionary behind Creative Stitching Boutique, driving our mission and values forward.
-            </p>
-          </div>
-          
-          <div className="flex justify-center">
-            <div className="max-w-2xl w-full">
-              {teamMembers.map((member, index) => (
-                <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden border border-boutique-secondary/10">
-                  <div className="relative overflow-hidden">
-                    <img 
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-64 object-cover"
-                    />
-                  </div>
-                  <div className="p-6 text-center">
-                    <h3 className="text-2xl font-bold text-boutique-textdark mb-2">
-                      {member.name}
-                    </h3>
-                    <p className="text-boutique-accent font-semibold text-base mb-4">
-                      {member.role}
-                    </p>
-                    <p className="text-boutique-textdark/80 leading-relaxed text-sm whitespace-pre-line">
-                      {member.bio}
-                    </p>
-                    <div className="mt-6 flex justify-center space-x-4">
-                      {[
-                        { number: '15+', label: 'Years Experience' },
-                        { number: '200+', label: 'Outfits Created' },
-                        { number: '50+', label: 'Happy Clients' }
-                      ].map((stat, statIndex) => (
-                        <div key={statIndex} className="text-center">
-                          <div className="text-lg font-bold text-boutique-primary">
-                            {stat.number}
-                          </div>
-                          <div className="text-xs text-boutique-textdark/70">
-                            {stat.label}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section> */}
+
 
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-boutique-primary to-boutique-highlight text-white">
