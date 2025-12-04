@@ -1,14 +1,21 @@
+import CustomStitching from "../assets/service/Custom Stitching.png"
+import TraditionalDresses from "../assets/service/Traditional Dresses.png"
+import PunjabiPhulkariSuits from "../assets/service/Punjabi Phulkari Suits.png"
+import DesignerPlazoSuits from "../assets/service/Designer Plazo Suits.png"
+import LiningSuitsStitching from "../assets/service/Lining Suits Stitching.png"
+import Alterations from "../assets/service/Alterations & Fitting.png"
+
 export const services = [
   {
     id: 1,
     icon: "FaCut",
     title: "Custom Stitching",
-    description: "Perfectly tailored garments made to your exact measurements with attention to every detail. I create beautiful custom outfits that fit you perfectly.",
+    description: "Perfectly tailored garments stitched to match your size, style, and comfort. Bring your own fabric and get beautifully customized outfits with professional finishing.",
     features: ["Perfect Fit Guarantee", "Premium Fabrics", "Personal Consultation", "Multiple Fittings"],
     price: "Starting ₹500",
     category: "stitching",
     rating: 4.9,
-    image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+    image: CustomStitching
   },
   {
     id: 2,
@@ -19,7 +26,7 @@ export const services = [
     price: "Starting ₹800",
     category: "himachali",
     rating: 4.8,
-    image: "https://images.unsplash.com/photo-1583391733956-6c78276477e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+    image: TraditionalDresses
   },
   {
     id: 3,
@@ -30,7 +37,7 @@ export const services = [
     price: "Starting ₹1000",
     category: "punjabi",
     rating: 4.9,
-    image: "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+    image: PunjabiPhulkariSuits
   },
   {
     id: 4,
@@ -41,7 +48,7 @@ export const services = [
     price: "Starting ₹600",
     category: "designer",
     rating: 4.7,
-    image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+    image: DesignerPlazoSuits
   },
   {
     id: 5,
@@ -57,7 +64,7 @@ export const services = [
     price: "Starting ₹700",
     category: "stitching",
     rating: 5.0,
-    image: "https://images.unsplash.com/photo-1580171405469-49a1bd43cc36?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+    image: LiningSuitsStitching
   }
   ,
   {
@@ -69,7 +76,7 @@ export const services = [
     price: "Starting ₹100",
     category: "alterations",
     rating: 4.6,
-    image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+    image: Alterations
   }
 ];
 
